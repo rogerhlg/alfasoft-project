@@ -13,5 +13,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', [ContactController::class, 'index'])->name('index');
+
+Route::post('contact/create', [ContactController::class, 'create'])->name('post-create-contact');
+
+Route::view('contact/create', 'create-contact')->name('create-contact');
+
+Route::get('/contact/show/{id}', [ContactController::class, 'showContact'])->name('show-contact');
+
+Route::get('/contact/update/{id}', [ContactController::class, 'update'])->name('update-contact');
+
+Route::post('/contact/update/{id}', [ContactController::class, 'actionUpdate'])->name('post-update-contact');

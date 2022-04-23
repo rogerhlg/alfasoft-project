@@ -16,15 +16,15 @@ class ContactSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        // DB::table('contacts')->insert([
-        //     'name' => $faker->name,
-        //     'email' => $faker->unique()->safeEmail,
-        //     'contact' => $faker->phoneNumber
-        // ]);
+        DB::table('contacts')->insert([
+            'name' => $faker->name,
+            'email' => $faker->unique()->safeEmail,
+            'contact' => $faker->phoneNumber
+        ]);
 
-        Contact::factory()
-            ->name($faker->name)
-            ->email($faker->unique()->safeEmail)
-            ->contact($faker->phoneNumber);
+        // Contact::factory()
+        //     ->name($faker->name)
+        //     ->email($faker->unique()->safeEmail)
+        //     ->contact($faker->phoneNumber);
     }
 }
