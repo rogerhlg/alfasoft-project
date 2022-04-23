@@ -23,8 +23,8 @@ class ContactService
 
     }
 
-    public function delete(){
-
+    public function deleteById(Int $id){
+        return Contact::where('id', $id)->delete();
     }
 
     public function list(){

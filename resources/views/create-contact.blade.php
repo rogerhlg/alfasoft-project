@@ -17,6 +17,5 @@
                 <button type="submit">Create</button>
             </form>
         </div>
-        <button><a href="">view all contacts</a></button>
     </x-slot>
 </x-layout>

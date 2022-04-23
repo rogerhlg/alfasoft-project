@@ -24,3 +24,5 @@ Route::get('/contact/show/{id}', [ContactController::class, 'showContact'])->nam
 Route::get('/contact/update/{id}', [ContactController::class, 'update'])->name('update-contact');
 
 Route::post('/contact/update/{id}', [ContactController::class, 'actionUpdate'])->name('post-update-contact');
+
+Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('delete-contact');

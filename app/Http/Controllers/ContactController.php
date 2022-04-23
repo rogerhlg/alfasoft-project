@@ -28,7 +28,7 @@ class ContactController extends Controller
         $msg = $contact ? 'Contact created successfully' : 'Failed to create contact';
         $request->session()->flash('msg', $msg);
         
-        return view('create-contact');
+        return redirect()->route('create-contact');
     }
     
     public function showContact(Int $id){
@@ -48,11 +48,13 @@ class ContactController extends Controller
         $msg = $contact ? 'Contact updated successfully' : 'Failed to update contact';
         $request->session()->flash('msg', $msg);
         
-        return view('contact-details', ['contact' => $contact]);
+        return redirect()->route('show-contact', $contact->id);
     }
 
-    public function delete(){
-
+    public function delete(Int $id){
+        $contactDeleted = $this->contactService->deleteById($id);
+        $msg = $contactDeleted ? 'Contact deleted successfully' : 'Failed to delete contact';
+        return redirect()->route('index');
     }
 
     public function list(){
