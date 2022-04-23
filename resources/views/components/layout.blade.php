@@ -11,7 +11,7 @@
         <a href="{{route('index')}}"> <button> view all contacts</button></a>
         <a href="{{route('create-contact')}}"> <button>add new contact</button></a>
     </header>
-    <body class="body">
+    <body>
         <x-flash-messages/>
         {{ $body }}
     </body>
