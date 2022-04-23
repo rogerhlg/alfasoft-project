@@ -52,3 +52,10 @@ php artisan make:req
 php artisan make:request CreateContactRequest
 php artisan make:component FlashMessages
 php artisan make:component layout
+git add .
+git commit -m "update_list_create_done"
+git push
+php artisan make:request UpdateContact
+php artisan make:migration add_soft_delete_to_contacts_table --table=contacts
+php artisan migrate
+git add .
